@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MVP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="fabric.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/svg2pdf.js@2.0.4/dist/svg2pdf.min.js"></script>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+</head>
+
+<body>
+    <div class="upload-wrapper">
+        <div>
+            <label for="pdf-upload" class="upload-label">Select PDF File</label>
+            <input style="display: none;" type="file" id="pdf-upload" accept="application/pdf" />
+        </div>
+        <div class="upload-wrapper-btns">
+            <span id="file-name" class="file-name-display"></span>
+            <button style="display: none;" class="pdf-remove-btn">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="drawing-wrapper">
+        <div id="toolbar">
+            <button id="groupBtn"><i class="fas fa-object-group"></i> Group</button>
+            <button id="ungroupBtn"><i class="fas fa-object-ungroup"></i> Ungroup</button>
+            <button id="bringForwardBtn"><i class="fas fa-level-up-alt" style="transform: rotate(90deg);"></i> Bring
+                Forward</button>
+            <button id="sendBackwardBtn"><i class="fas fa-level-down-alt" style="transform: rotate(90deg);"></i> Send
+                Backward</button>
+
+            <button id="panModeBtn"><i class="fas fa-hand-paper"></i> Pan</button>
+            <button id="freeHandDrawing"><i class="fas fa-pencil-alt"></i> Brush</button>
+            <!-- <button id="startCalibrationMode">Calibrate</button> -->
+            <button id="setLineToolClickMode"><i class="fas fa-slash"></i> Line Tool</button>
+            <button id="setScaleCalibrationTool"><i class="fas fa-slash"></i> Scale Calibration Tool</button>
+            <button id="setAngleLinesTool"><i class="fas fa-drafting-compass"></i> Angle Tool</button>
+            <!-- <button id="setArcToolBtn"><i class="fas fa-pen-nib"></i> Arc Tool</button> -->
+            <button id="setEraser"><i class="fas fa-eraser"></i> Eraser</button>
+            <button id="addRect"><i class="far fa-square"></i> Rectangle</button>
+            <button id="addCircle"><i class="far fa-circle"></i> Circle</button>
+            <button id="addText"><i class="fas fa-font"></i> Text</button>
+            <button id="setArrow"><i class="fas fa-arrow-right"></i> Arrow</button>
+            <button id="undoCanvas"><i class="fas fa-undo"></i> Undo</button>
+            <button id="redoCanvas"><i class="fas fa-redo"></i> Redo</button>
+            <button id="clearCanvas"><i class="fas fa-trash-alt"></i> Clear</button>
+            <button id="exportPDF"><i class="fas fa-file-pdf"></i> Export PDF</button>
+        </div>
+
+        <div
+            style="display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 10px;">
+
+            <!-- <div id="measure-input" style="display: none;">
+                <label class="scale-input-label">
+                    1 mm =
+                    <input type="number" id="scaleInput" value="4" min="0.1" step="0.1" />
+                    px
+                </label>
+            </div> -->
+
+            <div id="pdf-container" style="position: relative; overflow: auto; display: none;">
+                <div id="canvas-wrapper" style="position: absolute; top: 0; left: 0;">
+                    <!-- PDF canvas will be injected dynamically -->
+                    <canvas id="myCanvas"
+                        style="position: absolute; top: 0; left: 0; z-index: 10; background: transparent;"></canvas>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div id="eraser-cursor" class="eraser-cursor"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

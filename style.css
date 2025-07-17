@@ -1,0 +1,166 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#pdf-container {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    display: none;
+}
+
+#canvas-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+canvas {
+    display: block;
+}
+
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background: #f4f4f4;
+}
+
+.upload-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.upload-wrapper-btns {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* margin-top: 5px; */
+}
+
+.pdf-remove-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eb4d4b;
+    border: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    /* padding: 6px 12px; */
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.pdf-remove-btn:hover {
+    background-color: #ff2b27;
+    color: white;
+}
+
+
+.upload-label {
+    display: inline-block;
+    background-color: #6ab04c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
+    transition: background-color 0.3s ease;
+}
+
+.upload-label:hover {
+    background-color: #6dbe4b;
+}
+
+.drawing-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+#toolbar {
+    margin-bottom: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#toolbar button {
+    padding: 10px;
+    /* margin: 5px; */
+    /* margin-top: 15px; */
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+}
+
+#toolbar button i {
+    margin-right: 5px;
+}
+
+
+#toolbar button:hover {
+    background-color: #0056b3;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    /* background: white; */
+}
+
+/* #pdf-container {
+    margin-top: 20px;
+} */
+
+.eraser-cursor {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 200px;
+    pointer-events: none;
+    display: none;
+    z-index: 1000;
+}
+
+.scale-input-label {
+    display: inline-flex;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 14px;
+    gap: 6px;
+    background: #f5f5f5;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.scale-input-label input {
+    width: 60px;
+    padding: 3px 6px;
+    font-size: 14px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* #canvas-wrapper {
+    transition: transform 0.1s ease-out;
+} */
